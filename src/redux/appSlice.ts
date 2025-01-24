@@ -2,7 +2,8 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Item } from "../types/item";
 import { PlayerStats } from "../types/playerStats";
 import { ItemType } from "../types/common";
-import { defaultItems } from "../data/defaultItems";
+import { armourItems } from "@/data/armourItems";
+import { foodItems } from "@/data/foodItems";
 
 export interface AppState {
   currentItem?: Item;
@@ -54,7 +55,7 @@ const initialState: AppState = {
     necklace: undefined,
     spurs: undefined,
   },
-  items: defaultItems,
+  items: [...armourItems, ...foodItems],
 };
 
 const authSlice = createSlice({
