@@ -1,0 +1,91 @@
+import { Item } from "../types/item";
+import EXAMPLE_ITEM from "@/assets/items/example-item.png";
+
+export const defaultItems: Item[] = [
+  {
+    id: "123",
+    image: EXAMPLE_ITEM,
+    name: "Knight's Helmet",
+    type: "helmet",
+    group: "armour",
+    description:
+      "A sturdy steel helmet providing excellent protection for the head.",
+    weight: 5.0,
+    price: 250,
+    count: 1,
+    durability: 85,
+    sideStats: {
+      visibility: 15,
+      conspiracy: -5,
+      noise: 10,
+      charisma: 2,
+      speed: -1,
+    },
+    mainStats: {},
+  },
+  {
+    id: "324",
+    image: EXAMPLE_ITEM,
+    name: "Longsword",
+    type: "mainHand",
+    group: "weapon",
+    description: "A sharp, well-balanced longsword suitable for knights.",
+    weight: 3.5,
+    price: 180,
+    count: 1,
+    durability: 90,
+    sideStats: {
+      visibility: 5,
+      conspiracy: 3,
+      noise: 2,
+      charisma: 2,
+      speed: 8,
+    },
+    mainStats: {},
+  },
+  {
+    id: "1323",
+    image: EXAMPLE_ITEM,
+    name: "Loaf of Bread",
+    type: "other",
+    group: "food",
+    description: "A simple loaf of bread to satisfy your hunger.",
+    weight: 0.5,
+    price: 3,
+    count: 5,
+    durability: 100,
+    sideStats: {
+      visibility: 0,
+      conspiracy: 0,
+      noise: 0,
+      charisma: 0,
+      speed: 0,
+    },
+    mainStats: {
+      hunger: 25,
+    },
+  },
+  {
+    id: "2323",
+    image: EXAMPLE_ITEM,
+    name: "St. John's Wort",
+    type: "other",
+    group: "other",
+    description:
+      "A medicinal herb used in alchemy to treat wounds and improve health.",
+    weight: 0.1,
+    price: 10,
+    count: 10,
+    durability: 100,
+    sideStats: {
+      visibility: 0,
+      conspiracy: 0,
+      noise: 0,
+      charisma: 0,
+      speed: 0,
+    },
+    mainStats: {
+      health: 10,
+    },
+  },
+];
