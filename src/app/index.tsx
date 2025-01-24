@@ -14,7 +14,7 @@ import GeneralStat from "../components/stats/GeneralStat";
 const App = () => {
   return (
     <Provider store={store}>
-      <div className="bg-cover bg-center bg-no-repeat text-white p-4 h-screen w-full" style={{ backgroundImage: `url(${BACKGROUND})` }}>
+      <div className="bg-cover bg-center bg-no-repeat text-white h-screen w-full" style={{ backgroundImage: `url(${BACKGROUND})` }}>
         <MainNav />
         <div className="grid grid-cols-2">
           <div className="flex">
