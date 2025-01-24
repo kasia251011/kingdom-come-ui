@@ -6,7 +6,7 @@ import { armourItems } from "@/data/armourItems";
 import { foodItems } from "@/data/foodItems";
 
 export interface AppState {
-  currentItem?: Item;
+  currentItem: Item;
   playerStats: PlayerStats;
   activeInventory: {
     [key in ItemType]: Item | undefined;
@@ -15,7 +15,7 @@ export interface AppState {
 }
 
 const initialState: AppState = {
-  currentItem: undefined,
+  currentItem: armourItems[0],
   playerStats: {
     energy: 90,
     health: 85,
@@ -62,9 +62,6 @@ const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
-    removeItemFormList(state, { payload: item }: PayloadAction<Item>) {
-      state.items = state.items.filter((oldItem) => oldItem.id !== item.id);
-    },
     wearItem(state, { payload: item }: PayloadAction<Item>) {
       if (item.type in state.activeInventory) {
         const type = item.type as ItemType;
@@ -78,7 +75,25 @@ const authSlice = createSlice({
       if (state.playerStats.hunger > 100) {
         state.playerStats.hunger = 100;
       }
-      removeItemFormList(item);
+      if (state.playerStats.energy > 100) {
+        state.playerStats.energy = 100;
+      }
+      if (state.playerStats.health > 100) {
+        state.playerStats.health = 100;
+      }
+
+      state.items = state.items.map((oldItem) => {
+        console.log("halko");
+
+        if (oldItem.id === item.id) {
+          return {
+            ...oldItem,
+            count: oldItem.count - 1,
+          };
+        }
+        return oldItem;
+      });
+      state.items = state.items.filter((oldItem) => oldItem.count !== 0);
     },
     setCurrentItem(state, action: PayloadAction<Item>) {
       state.currentItem = action.payload;
@@ -92,6 +107,6 @@ const authSlice = createSlice({
   },
 });
 
-export const { wearItem, takeOffItem, setCurrentItem, removeItemFormList } =
+export const { wearItem, takeOffItem, setCurrentItem, eatItem } =
   authSlice.actions;
 export default authSlice.reducer;
