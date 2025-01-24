@@ -4,7 +4,7 @@ export interface Item {
   id: string;
   image: string;
   name: string;
-  type: ItemType | "other";
+  type: ItemType | "other" | "food";
   group: string;
   description: string;
   weight: number;

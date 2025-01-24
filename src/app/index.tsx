@@ -14,38 +14,43 @@ import GeneralStat from "../components/stats/GeneralStat";
 const App = () => {
   return (
     <Provider store={store}>
-      <div className="bg-cover bg-center bg-no-repeat text-white h-screen w-full" style={{ backgroundImage: `url(${BACKGROUND})` }}>
-        <MainNav />
-        <div className="grid grid-cols-2">
-          <div className="flex">
-            <div className="">
-              <Armor />
-              <div className="flex gap-4">
-                <div className="">
-                  <GeneralStat statName="visibility" />
-                  <GeneralStat statName="conspiracy" />
-                  <GeneralStat statName="noise" />
-                </div>
-                <div className="">
-                  <GeneralStat statName="speed" />
-                  <GeneralStat statName="charisma" />
+      <div
+        className="bg-cover flex justify-center bg-center bg-no-repeat text-white h-screen w-full"
+        style={{ backgroundImage: `url(${BACKGROUND})` }}
+      >
+        <div className="container ">
+          <MainNav />
+          <div className="grid grid-cols-2">
+            <div className="flex">
+              <div className="">
+                <Armor />
+                <div className="flex gap-4">
+                  <div className="">
+                    <GeneralStat statName="visibility" />
+                    <GeneralStat statName="conspiracy" />
+                    <GeneralStat statName="noise" />
+                  </div>
+                  <div className="">
+                    <GeneralStat statName="speed" />
+                    <GeneralStat statName="charisma" />
+                  </div>
                 </div>
               </div>
+              <div className="">
+                <Level />
+                <img src={PLAYER_FIGURE} className="w-40" />
+                <MainStats />
+              </div>
+              <div className="">
+                <Weapon />
+              </div>
             </div>
-            <div className="">
-              <Level />
-              <img src={PLAYER_FIGURE} />
-              <MainStats />
-            </div>
-            <div className="">
-              <Weapon />
+            <div>
+              <GeneralInventory />
             </div>
           </div>
-          <div>
-            <GeneralInventory />
-          </div>
+          <ButtonsInstruction />
         </div>
-        <ButtonsInstruction />
       </div>
     </Provider>
   );

@@ -26,19 +26,19 @@ const GeneralInventory = () => {
       {items.map((item, index) => (
         <div
           key={index}
-          className="flex justify-between cursor-pointer hover:bg-black"
+          className="flex justify-between cursor-pointer "
           onClick={() => selectItem(item)}
         >
-          <div className="flex gap-4">
+          <div className="flex gap-4 items-center">
             <img src={item.image} className="size-10" />
             <p>{item.name}</p>
 
-            <p className="w-10 text-right">{isOnPLayer(item) && "Założone"}</p>
+            <p className="w-16 text-right">{isOnPLayer(item) && "Założone"}</p>
           </div>
           <div className="flex">
-            <p className="w-10 text-right">{item.count}</p>
-            <p className="w-10 text-right">{item.durability}</p>
-            <p className="w-10 text-right"> {item.price}</p>
+            <p className="w-16 text-right">{item.count}</p>
+            <p className="w-16 text-right">{item.durability}</p>
+            <p className="w-16 text-right"> {item.price}</p>
           </div>
         </div>
       ))}
