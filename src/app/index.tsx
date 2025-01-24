@@ -6,6 +6,7 @@ import Weapon from "../components/inventory/Weapon";
 import GeneralInventory from "../components/inventory/GeneralInventory";
 import ButtonsInstruction from "../components/ButtonsInstruction";
 import PLAYER_FIGURE from "../assets/player-figure.png";
+import BACKGROUND from "../assets/background.jpg";
 import { Provider } from "react-redux";
 import { store } from "../redux/store";
 import GeneralStat from "../components/stats/GeneralStat";
@@ -13,7 +14,7 @@ import GeneralStat from "../components/stats/GeneralStat";
 const App = () => {
   return (
     <Provider store={store}>
-      <div className="bg-[#04080A] text-white p-4 h-dvh w-full">
+      <div className="bg-cover bg-center bg-no-repeat text-white p-4 h-screen w-full" style={{ backgroundImage: `url(${BACKGROUND})` }}>
         <MainNav />
         <div className="grid grid-cols-2">
           <div className="flex">
