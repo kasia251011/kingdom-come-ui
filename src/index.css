@@ -4,11 +4,64 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Vinque';
+  src: url('./assets/fonts/VinqueRg.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Vollkorn';
+  src: url('./assets/fonts/Vollkorn-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Vollkorn';
+  src: url('./assets/fonts/Vollkorn-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Vollkorn';
+  src: url('./assets/fonts/Vollkorn-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Vollkorn';
+  src: url('./assets/fonts/Vollkorn-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Vollkorn';
+  src: url('./assets/fonts/Vollkorn-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Vollkorn';
+  src: url('./assets/fonts/Vollkorn-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
 @layer base {
   html,
   body {
     margin: 0;
     padding: 0;
+  }
+  * {
+    font-family: 'Vollkorn', sans-serif;
+    font-weight: 500;
   }
 }
 
