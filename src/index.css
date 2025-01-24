@@ -63,6 +63,25 @@
     font-family: 'Vollkorn', sans-serif;
     font-weight: 500;
   }
+  .nav-item {
+    font-family: 'Vinque', sans-serif;
+    font-weight: 900;
+    font-size: 24px;
+    color: #ffffff;
+    opacity: 0.4;
+  }
+  .nav-item:first-of-type {
+    opacity: 1;
+  }
+  .nav-item:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+  .nav-icons {
+    width: 40px;
+    height: 40px;
+    margin-top: 28px;
+  }
 }
 
 @layer components {
