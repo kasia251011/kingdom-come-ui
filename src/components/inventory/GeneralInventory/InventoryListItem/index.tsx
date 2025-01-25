@@ -20,7 +20,7 @@ const InventoryListItem = ({ item }: { item: Item }) => {
 
   return (
     <div
-      className={`flex justify-between cursor-pointer px-3 ${
+      className={`flex items-center justify-between cursor-pointer px-3 ${
         isSelected ? "bg-amber-400" : ""
       }`}
     >

@@ -17,7 +17,7 @@ const MainNav = () => {
       <div className=" flex-1  flex justify-between ">
         {navLabels.map((label, index) => (
           <p
-            className="nav-item py-6 opacity-40 nth-2:opacity-100  text-white"
+            className="nav-item py-6 opacity-40 first:opacity-100  text-white"
             key={index}
           >
             {label}
