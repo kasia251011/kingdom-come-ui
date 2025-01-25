@@ -17,8 +17,8 @@ const GeneralStat = ({ statName }: SideStatProps) => {
   );
 
   return (
-    <div className="flex gap-4 w-32 justify-between  ">
-      <p>{label}</p> <p>{value}</p>
+    <div className="flex gap-4 w-32 justify-between text-sm leading-6">
+      <p className="font-semibold">{label}</p> <p className="font-semibold">{value}</p>
     </div>
   );
 };

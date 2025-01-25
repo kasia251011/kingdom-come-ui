@@ -10,6 +10,7 @@ import MainNav from "@/components/MainNav";
 import GeneralStat from "@/components/stats/GeneralStat";
 import SurvivalStats from "@/components/stats/survival-stats/SurvivalStats";
 import useKeyHandler from "@/hooks/useKeyHandler";
+import STATS_BACKGROUND from "@/assets/stats_background.png";
 
 const Dashboard = () => {
   useKeyHandler();
@@ -21,8 +22,8 @@ const Dashboard = () => {
         <div className="flex col-span-7">
           <div className="mt-20">
             <Armor />
-            <div className="flex gap-4">
-              <div className="">
+            <div className="flex gap-4 p-5 mt-8 bg-no-repeat bg-center " style={{ backgroundImage: `url(${STATS_BACKGROUND})`, backgroundSize: '100% 100%' }}>
+              <div className="mr-2">
                 <GeneralStat statName="visibility" />
                 <GeneralStat statName="conspiracy" />
                 <GeneralStat statName="noise" />
