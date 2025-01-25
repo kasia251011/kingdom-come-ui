@@ -6,6 +6,11 @@ export default {
       center: true,
       padding: "1rem",
     },
+    extend: {
+      colors: {
+        customGold: "#C5A987",
+      },
+    },
   },
   plugins: [],
 };
