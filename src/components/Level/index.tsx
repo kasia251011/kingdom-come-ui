@@ -13,15 +13,14 @@ const Level = () => {
   const levelProgress = Math.floor((points / maxPoints) * 100);
 
   return (
-    <div className="flex place-items-start items-start gap-2.5">
-      <p className="text-[#C5A987]">Poziom</p>
-      <p className="text-5xl">{level}</p>
-      <div className="flex flex-col items-end gap-1">
+    <div className="flex flex-col items-center gap-1">
+      <p className="text-[#C5A987] text-sm">Poziom {level}</p>
+      <div className="flex gap-2 items-center">
         <div className="relative w-55 h-5">
           <img
             src={LEVELBAR}
             alt="level bar"
-            className="absolute top-0 left-0 w-full h-full object-cover z-1"
+            className="absolute top-0 left-0 w-full h-full  z-1"
           />
           <div
             className="absolute top-0 left-0 h-full overflow-hidden"
@@ -36,7 +35,7 @@ const Level = () => {
             />
           </div>
         </div>
-        <p>{levelProgress}%</p>
+        <p className="text-[#C5A987] text-sm">{levelProgress}%</p>
       </div>
     </div>
   );

@@ -3,6 +3,7 @@ import ButtonsInstruction from "@/components/ButtonsInstruction";
 import Armor from "@/components/inventory/active/Armor";
 import Weapon from "@/components/inventory/active/Weapon";
 import GeneralInventory from "@/components/inventory/GeneralInventory";
+import ItemInfo from "@/components/inventory/ItemInfo";
 import Level from "@/components/Level";
 import MainNav from "@/components/MainNav";
 import GeneralStat from "@/components/stats/GeneralStat";
@@ -31,7 +32,7 @@ const Dashboard = () => {
               </div>
             </div>
           </div>
-          <div className="">
+          <div className="flex flex-col items-center ">
             <Level />
             <img src={PLAYER_FIGURE} className="w-64" />
             <SurvivalStats />
@@ -42,6 +43,7 @@ const Dashboard = () => {
         </div>
         <div className="col-span-5">
           <GeneralInventory />
+          <ItemInfo />
         </div>
       </div>
       <ButtonsInstruction />
