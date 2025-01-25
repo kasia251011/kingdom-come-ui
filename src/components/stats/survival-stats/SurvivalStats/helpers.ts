@@ -1,13 +1,13 @@
 import { SurvivalStatName } from "@/types/common";
-import ENERGY_ICON from "../../../../assets/icons/main-stats/energy-icon.png";
-import ENERGYBAR_FILL from "../../../../assets/icons/main-stats/energybar-fill.png";
-import ENERGYBAR from "../../../../assets/icons/main-stats/energybar.png";
-import HEALTH_ICON from "../../../../assets/icons/main-stats/health-icon.png";
-import HEALTHBAR_FILL from "../../../../assets/icons/main-stats/healthbar-fill.png";
-import HEALTHBAR from "../../../../assets/icons/main-stats/healthbar.png";
-import HUNGER_ICON from "../../../../assets/icons/main-stats/hunger-icon.png";
-import HUNGERBAR_FILL from "../../../../assets/icons/main-stats/hungerbar-fill.png";
-import HUNGERBAR from "../../../../assets/icons/main-stats/hungerbar.png";
+import ENERGY_ICON from "@/assets/stats/survival-stats/energy-icon.png";
+import ENERGYBAR_FILL from "@/assets/stats/survival-stats/energybar-fill.png";
+import ENERGYBAR from "@/assets/stats/survival-stats/energybar.png";
+import HEALTH_ICON from "@/assets/stats/survival-stats/health-icon.png";
+import HEALTHBAR_FILL from "@/assets/stats/survival-stats/healthbar-fill.png";
+import HEALTHBAR from "@/assets/stats/survival-stats/healthbar.png";
+import HUNGER_ICON from "@/assets/stats/survival-stats/hunger-icon.png";
+import HUNGERBAR_FILL from "@/assets/stats/survival-stats/hungerbar-fill.png";
+import HUNGERBAR from "@/assets/stats/survival-stats/hungerbar.png";
 import { SurvivalStats } from "../SurvivalStat/types";
 
 const survivalStatsLabel: SurvivalStats[] = [
