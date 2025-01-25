@@ -10,16 +10,15 @@ const SurvivalStat = ({
   stats: { fieldName, icon, bar, fill },
 }: SurvivalStatProps) => {
   return (
-    <div className="flex place-items-start items-center gap-2.5">
+    <div className="flex items-center gap-2.5">
       <img
         src={icon}
-        alt={`${fieldName} icon`}
         className={`${
           fieldName === "energy" ? "w-4 h-5 ml-1 mr-1" : "w-6 h-6"
         }`}
       />
-      <div className="relative w-65">
-        <img src={bar} alt={`${fieldName} bar`} />
+      <div className="relative w-48 ">
+        <img src={bar} />
         <img
           src={fill}
           alt={`${fieldName} fill`}

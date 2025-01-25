@@ -99,10 +99,3 @@ export const accessorySlotLabels: SlotLabel[] = [
     label: "spurs",
   },
 ];
-
-export const getSlotLabel = (name: ItemType) =>
-  headSlotLabels.find((slot) => slot.label === name) ||
-  bodySlotLabels.find((slot) => slot.label === name) ||
-  armsSlotLabels.find((slot) => slot.label === name) ||
-  legSlotLabels.find((slot) => slot.label === name) ||
-  accessorySlotLabels.find((slot) => slot.label === name)!;
