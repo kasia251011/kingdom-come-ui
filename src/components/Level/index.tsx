@@ -1,7 +1,7 @@
 import { useAppSelector } from "@/redux/hooks";
 
-import LEVELBAR_FILL from "@/assets/stats/level-stats/levelbar-fill.png";
-import LEVELBAR from "@/assets/stats/level-stats/levelbar.png";
+import LEVELBAR_FILL from "@/assets/level/levelbar-fill.png";
+import LEVELBAR from "@/assets/level/levelbar.png";
 
 const Level = () => {
   const {
