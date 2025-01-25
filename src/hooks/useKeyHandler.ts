@@ -1,9 +1,11 @@
 import { useCallback, useEffect } from "react";
 import useSelectItem from "./useSelectItem";
 import useActionItem from "./useActionItem";
+import useSelectGroup from "./useSelectGroup";
 
 const useKeyHandler = () => {
   const { selectNextItem, selectPreviousItem } = useSelectItem();
+  const { selectPreviousGroup, selectNextGroup } = useSelectGroup();
   const actionItem = useActionItem();
 
   const handleKeyDown = useCallback(
@@ -15,6 +17,12 @@ const useKeyHandler = () => {
         case "s":
           selectNextItem();
           break;
+        case "a":
+          selectPreviousGroup();
+          break;
+        case "d":
+          selectNextGroup();
+          break;
         case "Enter":
           actionItem();
           break;
@@ -22,7 +30,13 @@ const useKeyHandler = () => {
           break;
       }
     },
-    [actionItem, selectNextItem, selectPreviousItem]
+    [
+      actionItem,
+      selectNextGroup,
+      selectNextItem,
+      selectPreviousGroup,
+      selectPreviousItem,
+    ]
   );
 
   useEffect(() => {

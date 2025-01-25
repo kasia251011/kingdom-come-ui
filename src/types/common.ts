@@ -4,6 +4,10 @@ export interface DefenseStats {
   blunt: number;
 }
 
+export type GroupType = "armour" | "weapon" | "other" | "food" | "quest";
+
+export type GroupTypeAll = GroupType | "all";
+
 export type GeneralStatName =
   | "visibility"
   | "conspiracy"

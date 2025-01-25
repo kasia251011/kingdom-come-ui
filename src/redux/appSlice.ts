@@ -1,12 +1,14 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Item } from "../types/item";
 import { PlayerStats } from "../types/playerStats";
-import { ItemType } from "../types/common";
+import { GroupTypeAll, ItemType } from "../types/common";
 import { armourItems } from "@/data/armourItems";
 import { foodItems } from "@/data/foodItems";
 
 export interface AppState {
   currentItem: Item;
+  currentGroup: GroupTypeAll;
+  currentItems: Item[];
   playerStats: PlayerStats;
   activeInventory: {
     [key in ItemType]: Item | undefined;
@@ -14,8 +16,11 @@ export interface AppState {
   items: Item[];
 }
 
+const allItems = [...armourItems, ...foodItems];
+
 const initialState: AppState = {
   currentItem: armourItems[0],
+  currentItems: allItems,
   playerStats: {
     energy: 90,
     health: 85,
@@ -55,7 +60,8 @@ const initialState: AppState = {
     necklace: undefined,
     spurs: undefined,
   },
-  items: [...armourItems, ...foodItems],
+  items: allItems,
+  currentGroup: "all",
 };
 
 const authSlice = createSlice({
@@ -63,15 +69,15 @@ const authSlice = createSlice({
   initialState,
   reducers: {
     wearItem(state, { payload: item }: PayloadAction<Item>) {
-      if (item.type in state.activeInventory) {
+      if (item.type && item.type in state.activeInventory) {
         const type = item.type as ItemType;
         state.activeInventory[type] = state.currentItem;
       }
     },
     eatItem(state, { payload: item }: PayloadAction<Item>) {
-      state.playerStats.hunger += item.mainStats.hunger ?? 0;
-      state.playerStats.energy += item.mainStats.energy ?? 0;
-      state.playerStats.health += item.mainStats.health ?? 0;
+      state.playerStats.hunger += item.survivalStats.hunger ?? 0;
+      state.playerStats.energy += item.survivalStats.energy ?? 0;
+      state.playerStats.health += item.survivalStats.health ?? 0;
       if (state.playerStats.hunger > 100) {
         state.playerStats.hunger = 100;
       }
@@ -99,14 +105,28 @@ const authSlice = createSlice({
       state.currentItem = action.payload;
     },
     takeOffItem(state, { payload: item }: PayloadAction<Item>) {
-      if (item.type in state.activeInventory) {
+      if (item.type && item.type in state.activeInventory) {
         const type = item.type as ItemType;
         state.activeInventory[type] = undefined;
       }
     },
+    setCurrentGroup(state, { payload: group }: PayloadAction<GroupTypeAll>) {
+      state.currentGroup = group;
+      const filteredItems = state.items.filter((item) =>
+        group === "all" ? item : item.group === group
+      );
+
+      state.currentItems = filteredItems;
+      state.currentItem = filteredItems[0];
+    },
   },
 });
 
-export const { wearItem, takeOffItem, setCurrentItem, eatItem } =
-  authSlice.actions;
+export const {
+  wearItem,
+  takeOffItem,
+  setCurrentItem,
+  eatItem,
+  setCurrentGroup,
+} = authSlice.actions;
 export default authSlice.reducer;
