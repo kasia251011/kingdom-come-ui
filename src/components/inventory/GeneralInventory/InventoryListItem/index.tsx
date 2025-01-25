@@ -6,6 +6,8 @@ import { useMemo } from "react";
 const InventoryListItem = ({ item }: { item: Item }) => {
   const { activeInventory, currentItem } = useAppSelector((state) => state.app);
 
+  console.log(currentItem.name);
+
   const isOnPLayer = useMemo(
     () => activeInventory[item.type as ItemType]?.id === item.id,
     [activeInventory, item.id, item.type]
@@ -25,9 +27,9 @@ const InventoryListItem = ({ item }: { item: Item }) => {
       <div className="flex gap-4 items-center">
         <img src={item.image} className="size-10" />
         <p>{item.name}</p>
-        <p className="w-16 text-right">{isOnPLayer && "Założone"}</p>
       </div>
       <div className="flex items-center pr-4">
+        {isOnPLayer && <div className="size-2 bg-amber-950 rounded" />}
         <p className="w-16 text-right ">{item.count}</p>
         <p className="w-16 text-right ">{item.durability}</p>
         <p className="w-16 text-right "> {item.price}</p>

@@ -89,8 +89,6 @@ const authSlice = createSlice({
       }
 
       state.items = state.items.map((oldItem) => {
-        console.log("halko");
-
         if (oldItem.id === item.id) {
           return {
             ...oldItem,
@@ -99,7 +97,15 @@ const authSlice = createSlice({
         }
         return oldItem;
       });
+
       state.items = state.items.filter((oldItem) => oldItem.count !== 0);
+      state.currentItems = state.items.filter((item) =>
+        state.currentGroup === "all" ? item : item.group === state.currentGroup
+      );
+
+      state.currentItem =
+        state.currentItems.find((oldItem) => oldItem.id === item.id) ??
+        state.currentItems[0];
     },
     setCurrentItem(state, action: PayloadAction<Item>) {
       state.currentItem = action.payload;
