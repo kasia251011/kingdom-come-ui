@@ -4,6 +4,7 @@ import { PlayerStats } from "../types/playerStats";
 import { GroupTypeAll, ItemType } from "../types/common";
 import { armourItems } from "@/data/armourItems";
 import { foodItems } from "@/data/foodItems";
+import { weaponItems } from "@/data/weaponItems";
 
 export interface AppState {
   currentItem: Item;
@@ -16,7 +17,7 @@ export interface AppState {
   items: Item[];
 }
 
-const allItems = [...armourItems, ...foodItems];
+const allItems = [...armourItems, ...foodItems, ...weaponItems];
 
 const initialState: AppState = {
   currentItem: armourItems[0],

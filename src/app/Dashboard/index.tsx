@@ -1,7 +1,8 @@
 import PLAYER_FIGURE from "@/assets/player-figure.png";
 import ButtonsInstruction from "@/components/ButtonsInstruction";
 import Armor from "@/components/inventory/active/Armor";
-import Weapon from "@/components/inventory/active/Weapon";
+import DistanceWeapon from "@/components/inventory/active/Weapon/DistanceWeapon";
+import MeleeWeapon from "@/components/inventory/active/Weapon/MeleeWeapon";
 import GeneralInventory from "@/components/inventory/GeneralInventory";
 import ItemInfo from "@/components/inventory/ItemInfo";
 import Level from "@/components/Level";
@@ -18,7 +19,7 @@ const Dashboard = () => {
       <MainNav />
       <div className="grid grid-cols-12">
         <div className="flex col-span-7">
-          <div className="">
+          <div className="mt-20">
             <Armor />
             <div className="flex gap-4">
               <div className="">
@@ -34,14 +35,15 @@ const Dashboard = () => {
           </div>
           <div className="flex flex-col items-center ">
             <Level />
-            <img src={PLAYER_FIGURE} className="w-64" />
+            <img src={PLAYER_FIGURE} className="w-64 mt-8 mx-10" />
             <SurvivalStats />
           </div>
-          <div className="">
-            <Weapon />
+          <div className="mt-20 flex flex-col gap-4">
+            <MeleeWeapon />
+            <DistanceWeapon />
           </div>
         </div>
-        <div className="col-span-5">
+        <div className="col-span-5 mt-10">
           <GeneralInventory />
           <ItemInfo />
         </div>

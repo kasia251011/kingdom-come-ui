@@ -9,7 +9,7 @@ interface SlotGroupProps {
 
 const SlotGroup = ({ slots, label }: SlotGroupProps) => {
   return (
-    <div className="">
+    <div>
       <div className="flex gap-3 mb-1 items-center">
         <p className="uppercase text-sm">{label}</p>
         <div className="flex gap-2">
