@@ -4,21 +4,22 @@ import { useCallback } from "react";
 
 const useSelectItem = () => {
   const dispatch = useAppDispatch();
-  const { items, currentItem } = useAppSelector((state) => state.app);
+  const { currentItems, currentItem } = useAppSelector((state) => state.app);
 
   const selectNextItem = useCallback(() => {
-    const currentIndex = items.indexOf(currentItem);
-    if (currentIndex === items.length - 1) return;
+    const currentIndex = currentItems.indexOf(currentItem);
+    if (currentIndex === currentItems.length - 1) return;
 
-    dispatch(setCurrentItem(items[currentIndex + 1]));
-  }, [currentItem, dispatch, items]);
+    dispatch(setCurrentItem(currentItems[currentIndex + 1]));
+  }, [currentItem, dispatch, currentItems]);
 
   const selectPreviousItem = useCallback(() => {
-    const currentIndex = items.indexOf(currentItem);
+    const currentIndex = currentItems.indexOf(currentItem);
+
     if (currentIndex === 0) return;
 
-    dispatch(setCurrentItem(items[currentIndex - 1]));
-  }, [currentItem, dispatch, items]);
+    dispatch(setCurrentItem(currentItems[currentIndex - 1]));
+  }, [currentItem, dispatch, currentItems]);
 
   return { selectNextItem, selectPreviousItem };
 };

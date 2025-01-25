@@ -9,7 +9,6 @@ import ICON_CONTROLLER_R1 from "@/assets/controller-icons/pad_r1_x4.png";
 
 const GeneralInventory = () => {
   const { currentGroup, currentItems } = useAppSelector((state) => state.app);
-  console.log(currentItems.length);
 
   return (
     <div className="">
@@ -27,7 +26,7 @@ const GeneralInventory = () => {
         <img className="h-5" src={ICON_CONTROLLER_R1} />
       </div>
       <div
-        className="flex flex-col gap-4 bg-no-repeat bg-center bg-contain h-[720px] p-5 text-black"
+        className="flex flex-col gap-4 bg-no-repeat bg-center bg-contain h-[600px] p-5 text-black"
         style={{ backgroundImage: `url(${PAPER})` }}
       >
         {currentItems.map((item, index) => (

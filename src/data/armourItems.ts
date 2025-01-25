@@ -5,6 +5,7 @@ import HELMET from "@/assets/items/armour/helmet.png";
 import BODY_CHAINMAIL from "@/assets/items/armour/bodyChainmail.png";
 import BODY_GARMENT from "@/assets/items/armour/bodyGarment.png";
 import ARM_ARMOUR from "@/assets/items/armour/arm_armour.png";
+import HAT from "@/assets/items/armour/hat.png";
 
 export const armourItems: Item[] = [
   {
@@ -73,6 +74,9 @@ export const armourItems: Item[] = [
       noise: 100,
       charisma: 18,
       speed: 0,
+      stab: 1,
+      slash: 1,
+      blunt: 1,
     },
     survivalStats: {},
   },
@@ -97,6 +101,29 @@ export const armourItems: Item[] = [
       stab: 10,
       slash: 10,
       blunt: 4,
+    },
+    survivalStats: {},
+  },
+  {
+    id: id(),
+    image: HAT,
+    name: "Szpiczasty zielony kapelusz",
+    description: `Zielony kapelusz z piórem. Ładny dla oka, ale nie zapewnia zbyt dużej ochrony. Uwaga, ostry!`,
+    count: 1,
+    weight: 0.5,
+    price: 5,
+    durability: 40,
+    type: "helmet",
+    group: "armour",
+    sideStats: {
+      visibility: 64,
+      conspiracy: 59,
+      noise: 36,
+      charisma: 14,
+      speed: 0,
+      stab: 1,
+      slash: 1,
+      blunt: 1,
     },
     survivalStats: {},
   },

@@ -5,7 +5,7 @@ import {
   bodySlotLabels,
   headSlotLabels,
   legSlotLabels,
-} from "../SlotGroup/slotLabels";
+} from "../slotLabels";
 
 const Armor = () => {
   return (
@@ -14,7 +14,7 @@ const Armor = () => {
       <SlotGroup label="Ochrona Ciała" slots={bodySlotLabels} />
       <SlotGroup label="Ochrona Rąk" slots={armsSlotLabels} />
       <SlotGroup label="Ochrona Nóg" slots={legSlotLabels} />
-      <SlotGroup label="Dodatki2@" slots={accessorySlotLabels} />
+      <SlotGroup label="Dodatki" slots={accessorySlotLabels} />
     </div>
   );
 };
