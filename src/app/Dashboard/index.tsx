@@ -1,12 +1,12 @@
+import PLAYER_FIGURE from "@/assets/player-figure.png";
+import ButtonsInstruction from "@/components/ButtonsInstruction";
 import Armor from "@/components/inventory/active/Armor";
-import Level from "@/components/Level";
-import MainNav from "@/components/MainNav";
-import SurvivalStats from "@/components/stats/SurvivalStats";
 import Weapon from "@/components/inventory/active/Weapon";
 import GeneralInventory from "@/components/inventory/GeneralInventory";
-import ButtonsInstruction from "@/components/ButtonsInstruction";
-import PLAYER_FIGURE from "@/assets/player-figure.png";
+import Level from "@/components/Level";
+import MainNav from "@/components/MainNav";
 import GeneralStat from "@/components/stats/GeneralStat";
+import SurvivalStats from "@/components/stats/survival-stats/SurvivalStats";
 import useKeyHandler from "@/hooks/useKeyHandler";
 
 const Dashboard = () => {

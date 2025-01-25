@@ -8,6 +8,8 @@ export type GroupType = "armour" | "weapon" | "other" | "food" | "quest";
 
 export type GroupTypeAll = GroupType | "all";
 
+export type SurvivalStatName = "health" | "hunger" | "energy";
+
 export type GeneralStatName =
   | "visibility"
   | "conspiracy"
