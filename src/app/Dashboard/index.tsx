@@ -6,7 +6,7 @@ import GeneralInventory from "@/components/inventory/GeneralInventory";
 import Level from "@/components/Level";
 import MainNav from "@/components/MainNav";
 import GeneralStat from "@/components/stats/GeneralStat";
-import SurvivalStats from "@/components/stats/SurvivalStats";
+import SurvivalStats from "@/components/stats/survival-stats/SurvivalStats";
 import useKeyHandler from "@/hooks/useKeyHandler";
 
 const Dashboard = () => {
