@@ -4,6 +4,8 @@ export interface DefenseStats {
   blunt: number;
 }
 
+export type MainStatName = "health" | "hunger" | "energy";
+
 export type GeneralStatName =
   | "visibility"
   | "conspiracy"
