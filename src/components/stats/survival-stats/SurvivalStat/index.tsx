@@ -14,7 +14,7 @@ const SurvivalStat = ({
       <img
         src={icon}
         className={`${
-          fieldName === "energy" ? "w-4 h-5 ml-1 mr-1" : "w-6 h-6"
+          fieldName === "energy" ? "w-3 h-4 ml-1 mr-2" : "w-6 h-6"
         }`}
       />
       <div className="relative w-48 ">
@@ -26,7 +26,7 @@ const SurvivalStat = ({
           style={{ width: `${value - 1}%` }}
         />
       </div>
-      <p>{value}/100</p>
+      <p className="text-sm">{value}/100</p>
     </div>
   );
 };

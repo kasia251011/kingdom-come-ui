@@ -112,7 +112,7 @@ export const armourItems: Item[] = [
     count: 1,
     weight: 0.5,
     price: 5,
-    durability: 40,
+    durability: 10,
     type: "helmet",
     group: "armour",
     sideStats: {

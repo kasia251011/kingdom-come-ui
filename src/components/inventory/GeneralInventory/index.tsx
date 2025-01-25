@@ -1,13 +1,13 @@
 import { useAppSelector } from "@/redux/hooks";
 
-import PAPER from "@/assets/general_inventory_paper.png";
+import PAPER from "@/assets/general-inventory/general_inventory_paper.png";
 import InventoryListItem from "./InventoryListItem";
 import { allGroups } from "./groupLabels";
 
 import ICON_CONTROLLER_L1 from "@/assets/controller-icons/pad_l1_x4.png";
 import ICON_CONTROLLER_R1 from "@/assets/controller-icons/pad_r1_x4.png";
 
-import LINE from "@/assets/line.png";
+import LINE from "@/assets/general-inventory/line.png";
 
 const GeneralInventory = () => {
   const { currentGroup, currentItems } = useAppSelector((state) => state.app);
