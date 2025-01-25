@@ -1,11 +1,12 @@
-import { DefenseStats, ItemType, GeneralStatName } from "./common";
+import { DefenseStats, ItemType, GeneralStatName, GroupType } from "./common";
 
 export interface Item {
   id: string;
   image: string;
   name: string;
-  type: ItemType | "other" | "food";
-  group: string;
+  group: GroupType;
+  // only for weapons and armour
+  type?: ItemType;
   description: string;
   weight: number;
   price: number;
@@ -14,7 +15,7 @@ export interface Item {
   sideStats: {
     [key in GeneralStatName]: number;
   } & Partial<DefenseStats>;
-  mainStats: {
+  survivalStats: {
     health?: number;
     energy?: number;
     hunger?: number;

@@ -8,7 +8,7 @@ const useActionItem = () => {
   const { currentItem, activeInventory } = useAppSelector((state) => state.app);
 
   const actionItem = useCallback(() => {
-    if (currentItem.type === "food") {
+    if (currentItem.group === "food") {
       dispatch(eatItem(currentItem));
       return;
     }

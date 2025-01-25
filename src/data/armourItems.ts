@@ -29,7 +29,7 @@ export const armourItems: Item[] = [
       slash: 23,
       blunt: 9,
     },
-    mainStats: {},
+    survivalStats: {},
   },
   {
     id: id(),
@@ -54,7 +54,7 @@ export const armourItems: Item[] = [
       slash: 13,
       blunt: 8,
     },
-    mainStats: {},
+    survivalStats: {},
   },
   {
     id: id(),
@@ -74,7 +74,7 @@ export const armourItems: Item[] = [
       charisma: 18,
       speed: 0,
     },
-    mainStats: {},
+    survivalStats: {},
   },
   {
     id: id(),
@@ -98,6 +98,6 @@ export const armourItems: Item[] = [
       slash: 10,
       blunt: 4,
     },
-    mainStats: {},
+    survivalStats: {},
   },
 ];

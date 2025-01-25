@@ -14,9 +14,8 @@ export const foodItems: Item[] = [
     weight: 0.3,
     price: 0.5,
     durability: 100,
-    type: "food",
     group: "food",
-    mainStats: {
+    survivalStats: {
       hunger: 2,
       energy: 0,
       health: 2,
