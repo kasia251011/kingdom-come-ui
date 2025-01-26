@@ -8,6 +8,7 @@ import ICON_CONTROLLER_L1 from "@/assets/controller-icons/pad_l1_x4.png";
 import ICON_CONTROLLER_R1 from "@/assets/controller-icons/pad_r1_x4.png";
 
 import LINE from "@/assets/general-inventory/line.png";
+import DECORATION_TOP from "@/assets/general-inventory/decoration_top.png";
 
 const GeneralInventory = () => {
   const { currentGroup, currentItems } = useAppSelector((state) => state.app);
@@ -28,9 +29,10 @@ const GeneralInventory = () => {
         <img className="h-5" src={ICON_CONTROLLER_R1} />
       </div>
       <div
-        className="flex flex-col  bg-no-repeat bg-center bg-contain h-[500px] p-5 text-black"
+        className="flex flex-col bg-no-repeat bg-cover h-[500px] p-5 text-black"
         style={{ backgroundImage: `url(${PAPER})` }}
       >
+        <img className="w-full mb-2" src={DECORATION_TOP} />
         <div className="h-full overflow-hidden">
           {" "}
           {currentItems.map((item, index) => (
