@@ -33,35 +33,39 @@ const ItemInfo = () => {
       className="flex gap-3 bg-no-repeat bg-center bg-contain h-[200px] -mt-6 px-7 pt-10 text-black"
       style={{ backgroundImage: `url(${PAPER})` }}
     >
-      <img src={currentItem.image} className="size-20" />
-      <div className="">
-        <p className="text-xl nav-item">{currentItem.name}</p>
-        <div className="mt-2 overflow-y-auto h-14" ref={divRef}>
-          <p className="text-sm ">{currentItem.description}</p>
-        </div>
-        <div className="flex gap-6 mt-2">
-          {!!currentItem.sideStats.stab && (
-            <div className="flex gap-2">
-              <img src={STAB_DARK} className="w-5" />
-              <p> {currentItem.sideStats.stab}</p>
+      {currentItem !== undefined && (
+        <>
+          <img src={currentItem.image} className="size-20" />
+          <div className="">
+            <p className="text-xl nav-item">{currentItem.name}</p>
+            <div className="mt-2 overflow-y-auto h-14" ref={divRef}>
+              <p className="text-sm ">{currentItem.description}</p>
             </div>
-          )}
+            <div className="flex gap-6 mt-2">
+              {!!currentItem.sideStats.stab && (
+                <div className="flex gap-2">
+                  <img src={STAB_DARK} className="w-5" />
+                  <p> {currentItem.sideStats.stab}</p>
+                </div>
+              )}
 
-          {!!currentItem.sideStats.slash && (
-            <div className="flex ">
-              <img src={SLASH_DARK} className="w-5" />
-              <p> {currentItem.sideStats.slash}</p>
-            </div>
-          )}
+              {!!currentItem.sideStats.slash && (
+                <div className="flex ">
+                  <img src={SLASH_DARK} className="w-5" />
+                  <p> {currentItem.sideStats.slash}</p>
+                </div>
+              )}
 
-          {!!currentItem.sideStats.blunt && (
-            <div className="flex  ">
-              <img src={BLUNT_DARK} className="w-5" />
-              <p> {currentItem.sideStats.blunt}</p>
+              {!!currentItem.sideStats.blunt && (
+                <div className="flex  ">
+                  <img src={BLUNT_DARK} className="w-5" />
+                  <p> {currentItem.sideStats.blunt}</p>
+                </div>
+              )}
             </div>
-          )}
-        </div>
-      </div>
+          </div>
+        </>
+      )}
     </div>
   );
 };

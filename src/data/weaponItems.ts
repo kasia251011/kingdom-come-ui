@@ -4,7 +4,9 @@ import { v4 as id } from "uuid";
 import SHIELD from "@/assets/items/weapon/shield.png";
 import SWORD from "@/assets/items/weapon/sword.png";
 import BOW from "@/assets/items/weapon/bow.png";
+import LONGBOW from "@/assets/items/weapon/longbow.png";
 import ARROWS from "@/assets/items/weapon/arrows.png";
+import AXE from "@/assets/items/weapon/axe.png";
 
 export const weaponItems: Item[] = [
   {
@@ -80,6 +82,27 @@ export const weaponItems: Item[] = [
   },
   {
     id: id(),
+    image: LONGBOW,
+    name: "Długi łuk popiołów",
+    description: `Długi łuk jest najlepszą i najbardziej śmiercionośną bronią, jaką wymyślili średniowieczni łucznicy.
+    Ale nie każdy jest w stanie sobie z nim poradzić. Przede wszystkim potrzebuje silnego, stabilnego ramienia.`,
+    count: 1,
+    weight: 3,
+    price: 497.2,
+    durability: 100,
+    type: "bow",
+    group: "weapon",
+    sideStats: {
+      visibility: 0,
+      conspiracy: 0,
+      noise: 0,
+      charisma: 0,
+      speed: 0,
+    },
+    survivalStats: {},
+  },
+  {
+    id: id(),
     image: ARROWS,
     name: "Strzały myśliwskie",
     description: `W średniowiecznym łucznictwie dostępnych jest wiele rodzajów strzał: strzały do zadawania ran i przebijania na potrzeby walki, strzały myśliwskie do polowań na zwierzynę itp. 
@@ -99,6 +122,31 @@ export const weaponItems: Item[] = [
       stab: 90,
       slash: 0,
       blunt: 0,
+    },
+    survivalStats: {},
+  },
+  {
+    id: id(),
+    image: AXE,
+    name: "Szeroki topór",
+    description: `Topór bojowy z szeroką głowicą i metalizowaną rękojeścią. 
+    Ciężka głowica tego topora nadaje każdemu ciosowi siłę, której wiele rodzajów zbroi nie jest w stanie wytrzymać,
+    a jego metalowa rękojeść może odeprzeć niejeden cios.`,
+    count: 1,
+    weight: 6,
+    price: 360,
+    durability: 45,
+    type: "mainHand",
+    group: "weapon",
+    sideStats: {
+      visibility: 0,
+      conspiracy: 0,
+      noise: 0,
+      charisma: 10,
+      speed: 0,
+      stab: 22,
+      slash: 34,
+      blunt: 32,
     },
     survivalStats: {},
   },

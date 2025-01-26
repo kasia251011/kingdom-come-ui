@@ -5,6 +5,8 @@ import { GroupTypeAll, ItemType } from "../types/common";
 import { armourItems } from "@/data/armourItems";
 import { foodItems } from "@/data/foodItems";
 import { weaponItems } from "@/data/weaponItems";
+import { questItems } from "@/data/questItems";
+import { otherItems } from "@/data/otherItems";
 
 export interface AppState {
   currentItem: Item;
@@ -17,7 +19,7 @@ export interface AppState {
   items: Item[];
 }
 
-const allItems = [...armourItems, ...foodItems, ...weaponItems];
+const allItems = [...armourItems, ...foodItems, ...weaponItems, ...questItems, ...otherItems];
 
 const initialState: AppState = {
   currentItem: armourItems[0],
