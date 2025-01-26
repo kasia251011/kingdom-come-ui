@@ -31,12 +31,12 @@ const GeneralInventory = () => {
         className="flex flex-col  bg-no-repeat bg-center bg-contain h-[500px] p-5 text-black"
         style={{ backgroundImage: `url(${PAPER})` }}
       >
-        <div className="h-full overflow-clip">
+        <div className="h-full overflow-hidden">
           {" "}
           {currentItems.map((item, index) => (
             <div key={index}>
               <InventoryListItem item={item} />
-              <img className="w-full " src={LINE} />
+              <img className="w-full" src={LINE} />
             </div>
           ))}
         </div>

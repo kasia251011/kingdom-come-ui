@@ -1,12 +1,13 @@
 import { useAppSelector } from "@/redux/hooks";
 import { ItemType } from "@/types/common";
 import { Item } from "@/types/item";
-import { useMemo } from "react";
+import { useMemo, useRef } from "react";
 import IS_ON_PLAYER from "@/assets/general-inventory/is_on_player.png";
 import BROKEN from "@/assets/general-inventory/broken.png";
 
 const InventoryListItem = ({ item }: { item: Item }) => {
   const { activeInventory, currentItem } = useAppSelector((state) => state.app);
+  const itemRef = useRef<null | HTMLDivElement>(null);
 
   const isOnPLayer = useMemo(
     () => activeInventory[item.type as ItemType]?.id === item.id,
@@ -18,8 +19,16 @@ const InventoryListItem = ({ item }: { item: Item }) => {
     [currentItem, item.id]
   );
 
+  if (isSelected && itemRef.current) {
+    itemRef.current.scrollIntoView({
+      block: "nearest",
+      inline: "nearest",
+    });
+  }
+
   return (
     <div
+      ref={itemRef}
       className={`flex items-center justify-between cursor-pointer px-3 ${
         isSelected ? "bg-amber-400" : ""
       }`}
