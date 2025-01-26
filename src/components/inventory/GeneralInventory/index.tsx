@@ -34,8 +34,8 @@ const GeneralInventory = () => {
         <div className="h-full overflow-clip">
           {" "}
           {currentItems.map((item, index) => (
-            <div>
-              <InventoryListItem key={index} item={item} />
+            <div key={index}>
+              <InventoryListItem item={item} />
               <img className="w-full " src={LINE} />
             </div>
           ))}
