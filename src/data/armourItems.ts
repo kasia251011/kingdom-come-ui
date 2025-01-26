@@ -2,6 +2,8 @@ import { Item } from "@/types/item";
 import { v4 as id } from "uuid";
 
 import HELMET from "@/assets/items/armour/helmet.png";
+import HEAD_CHAINMAIL from "@/assets/items/armour/headChainmail.png";
+import COIF from "@/assets/items/armour/coif.png";
 import BODY_CHAINMAIL from "@/assets/items/armour/bodyChainmail.png";
 import BODY_GARMENT from "@/assets/items/armour/bodyGarment.png";
 import BODY_PLATE from "@/assets/items/armour/bodyPlate.png";
@@ -9,8 +11,9 @@ import OUTER_GARMET from "@/assets/items/armour/outerGarment.png";
 import GLOVES from "@/assets/items/armour/gloves.png";
 import ARM_ARMOUR from "@/assets/items/armour/arm_armour.png";
 import HAT from "@/assets/items/armour/hat.png";
-import COIF from "@/assets/items/armour/coif.png";
+import LEG_CHAINMAIL from "@/assets/items/armour/legChainmail.png";
 import LEG_PLATE from "@/assets/items/armour/legPlate.png";
+import HOSE from "@/assets/items/armour/hose.png";
 import BOOTS from "@/assets/items/armour/boots.png";
 import SPURS from "@/assets/items/armour/spurs.png";
 
@@ -35,6 +38,30 @@ export const armourItems: Item[] = [
       speed: 0,
       stab: 23,
       slash: 23,
+      blunt: 9,
+    },
+    survivalStats: {},
+  },
+  {
+    id: id(),
+    image: HEAD_CHAINMAIL,
+    name: "Kaptur kolczy szlachcica",
+    description:
+      "Czepiec kolczy to kaptur zakrywający głowę, szyję i ramiona kolczugą. W walce zapewnia bardzo dobrą ochronę newralgicznych miejsc.",
+    count: 1,
+    weight: 4,
+    price: 638.4,
+    durability: 60,
+    type: "headChainmail",
+    group: "armour",
+    sideStats: {
+      visibility: 68,
+      conspiracy: 64,
+      noise: 100,
+      charisma: 10,
+      speed: 0,
+      stab: 12,
+      slash: 15,
       blunt: 9,
     },
     survivalStats: {},
@@ -254,10 +281,34 @@ export const armourItems: Item[] = [
   },
   {
     id: id(),
+    image: LEG_CHAINMAIL,
+    name: "Czerwone przeszywanice kolcze",
+    description: `Przeszywanice płytowe chroniące nogi rycerskie, stosowane zwłaszcza jako dolna warstwa pod zbroję płytową.
+    Są one ponadto stworzone tak, aby były naprawdę wygodne, a ciężka zbroja nie będzie mocno i niewygodnie uciskać ciała rycerza.`,
+    count: 1,
+    weight: 3,
+    price: 1,
+    durability: 57,
+    type: "legChainmail",
+    group: "armour",
+    sideStats: {
+      visibility: 60,
+      conspiracy: 52,
+      noise: 14,
+      charisma: 15,
+      speed: 0,
+      stab: 7,
+      slash: 8,
+      blunt: 13,
+    },
+    survivalStats: {},
+  },
+  {
+    id: id(),
     image: LEG_PLATE,
     name: "Lekkie brygandynowe nagolenniki",
     description: `Nagolenninki płytowe całkowicie chronią nogi płytami ze stali,
-    sprytnie połączonymi w taki sposób, aby zapewnić prawie całkowitą swobodę ruchów`,
+    sprytnie połączonymi w taki sposób, aby zapewnić prawie całkowitą swobodę ruchów.`,
     count: 1,
     weight: 11,
     price: 186.1,
@@ -273,6 +324,30 @@ export const armourItems: Item[] = [
       stab: 9,
       slash: 9,
       blunt: 4,
+    },
+    survivalStats: {},
+  },
+  {
+    id: id(),
+    image: HOSE,
+    name: "Stylowe czerwone nogawice",
+    description: `Nogawice są średniowiecznym prekursorem spodni. Podstawowy ubiór zarówno dla mieszczan, jak i szlachty.
+    Ten kawałek jest szczególnie dobrze wykonany.`,
+    count: 1,
+    weight: 1,
+    price: 112.8,
+    durability: 50,
+    type: "hose",
+    group: "armour",
+    sideStats: {
+      visibility: 45,
+      conspiracy: 36,
+      noise: 1,
+      charisma: 12,
+      speed: 0,
+      stab: 1,
+      slash: 1,
+      blunt: 1,
     },
     survivalStats: {},
   },
