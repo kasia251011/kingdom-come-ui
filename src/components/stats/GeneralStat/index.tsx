@@ -4,9 +4,10 @@ import { getStatLabel } from "./generalStatsLabels";
 
 interface SideStatProps {
   statName: GeneralStatName;
+  statImage: string;
 }
 
-const GeneralStat = ({ statName }: SideStatProps) => {
+const GeneralStat = ({ statName, statImage }: SideStatProps) => {
   const { label } = getStatLabel(statName);
   const activeInventory = useAppSelector((state) => state.app.activeInventory);
 
@@ -17,8 +18,10 @@ const GeneralStat = ({ statName }: SideStatProps) => {
   );
 
   return (
-    <div className="flex gap-4 w-32 justify-between text-sm leading-6">
-      <p className="font-semibold">{label}</p> <p className="font-semibold">{value}</p>
+    <div className="flex gap-2 w-34 text-sm justify-between items-center">
+      <img src={statImage} alt={label} className="size-7" />
+      <p className="font-semibold self-end">{label}</p>
+      <p className="font-semibold self-end w-3">{value}</p>
     </div>
   );
 };

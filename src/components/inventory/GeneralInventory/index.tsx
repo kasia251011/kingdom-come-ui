@@ -10,6 +10,11 @@ import ICON_CONTROLLER_R1 from "@/assets/controller-icons/pad_r1_x4.png";
 import LINE from "@/assets/general-inventory/line.png";
 import DECORATION_TOP from "@/assets/general-inventory/decoration_top.png";
 
+import QUANTITY from "@/assets/stats/item-stats/quantity.png";
+import DURABILITY from "@/assets/stats/item-stats/durability.png";
+import WEIGHT from "@/assets/stats/item-stats/weight.png";
+import PRICE from "@/assets/stats/item-stats/price.png";
+
 const GeneralInventory = () => {
   const { currentGroup, currentItems } = useAppSelector((state) => state.app);
 
@@ -32,7 +37,26 @@ const GeneralInventory = () => {
         className="flex flex-col bg-no-repeat bg-cover h-[500px] p-5 text-black"
         style={{ backgroundImage: `url(${PAPER})` }}
       >
-        <img className="w-full mb-2" src={DECORATION_TOP} />
+        <div
+          className="bg-no-repeat flex items-center justify-between px-3 py-1"
+          style={{ backgroundImage: `url(${DECORATION_TOP})` }}
+        >
+          <p className="ml-2 text-yellow-300">Nazwa przedmiotu</p>
+          <div className="flex items-center pr-4">
+            <div className="flex w-15 justify-end">
+              <img src={QUANTITY} className="size-7" />
+            </div>
+            <div className="flex w-15 justify-end">
+              <img src={DURABILITY} className="size-7" />
+            </div>
+            <div className="flex w-15 justify-end">
+              <img src={WEIGHT} className="size-7" />
+            </div>
+            <div className="flex w-15 justify-end">
+              <img src={PRICE} className="size-7" />
+            </div>
+          </div>
+        </div>
         <div className="h-full overflow-hidden">
           {" "}
           {currentItems.map((item, index) => (

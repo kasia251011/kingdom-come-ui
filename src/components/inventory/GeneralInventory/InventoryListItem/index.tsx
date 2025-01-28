@@ -60,6 +60,7 @@ const InventoryListItem = ({ item }: { item: Item }) => {
         >
           {item.durability}
         </p>
+        <p className="w-16 text-right font-semibold"> {item.weight}</p>
         <p className="w-16 text-right font-semibold"> {item.price}</p>
       </div>
     </div>

@@ -11,6 +11,11 @@ import GeneralStat from "@/components/stats/GeneralStat";
 import SurvivalStats from "@/components/stats/survival-stats/SurvivalStats";
 import useKeyHandler from "@/hooks/useKeyHandler";
 import STATS_BACKGROUND from "@/assets/stats_background.png";
+import CHARISMA from "@/assets/stats/player-stats/charisma.png";
+import CONSPIRACY from "@/assets/stats/player-stats/conspiracy.png";
+import NOISE from "@/assets/stats/player-stats/noise.png";
+import SPEED from "@/assets/stats/player-stats/speed.png";
+import VISIBILITY from "@/assets/stats/player-stats/visibility.png";
 
 const Dashboard = () => {
   useKeyHandler();
@@ -22,15 +27,21 @@ const Dashboard = () => {
         <div className="flex col-span-7">
           <div className="mt-20">
             <Armor />
-            <div className="flex gap-4 p-5 mt-8 bg-no-repeat bg-center " style={{ backgroundImage: `url(${STATS_BACKGROUND})`, backgroundSize: '100% 100%' }}>
+            <div
+              className="flex gap-4 p-5 mt-8 bg-no-repeat bg-center "
+              style={{
+                backgroundImage: `url(${STATS_BACKGROUND})`,
+                backgroundSize: "100% 100%",
+              }}
+            >
               <div className="mr-2">
-                <GeneralStat statName="visibility" />
-                <GeneralStat statName="conspiracy" />
-                <GeneralStat statName="noise" />
+                <GeneralStat statName="visibility" statImage={VISIBILITY} />
+                <GeneralStat statName="conspiracy" statImage={CONSPIRACY} />
+                <GeneralStat statName="noise" statImage={NOISE} />
               </div>
               <div className="">
-                <GeneralStat statName="speed" />
-                <GeneralStat statName="charisma" />
+                <GeneralStat statName="speed" statImage={SPEED} />
+                <GeneralStat statName="charisma" statImage={CHARISMA} />
               </div>
             </div>
           </div>
