@@ -15,6 +15,15 @@ import DURABILITY from "@/assets/stats/item-stats/durability.png";
 import WEIGHT from "@/assets/stats/item-stats/weight.png";
 import PRICE from "@/assets/stats/item-stats/price.png";
 
+{/*TODO: UPDATE ICONS FOR CATEGORIES*/}
+import CATEGORY_ALL from "@/assets/general-inventory/categories/category_all.png";
+import CATEGORY_ARMOUR from "@/assets/general-inventory/categories/category_all.png";
+import CATEGORY_WEAPON from "@/assets/general-inventory/categories/category_all.png";
+import CATEGORY_FOOD from "@/assets/general-inventory/categories/category_all.png";
+import CATEGORY_QUEST from "@/assets/general-inventory/categories/category_all.png";
+import CATEGORY_OTHER from "@/assets/general-inventory/categories/category_all.png";
+import CATEGORY_BACKLIGHT from "@/assets/general-inventory/categories/category_backlight.png";
+
 const GeneralInventory = () => {
   const { currentGroup, currentItems, items, maxEquipLoad, currentGold } =
     useAppSelector((state) => state.app);
@@ -26,18 +35,38 @@ const GeneralInventory = () => {
     return Math.round(currentEquipLoad * 10) / 10;
   };
 
+  const getImageForGroup = (group: string): string => {
+    const images: Record<string, string> = {
+      all: CATEGORY_ALL,
+      armour: CATEGORY_ARMOUR,
+      weapon: CATEGORY_WEAPON,
+      food: CATEGORY_FOOD,
+      quest: CATEGORY_QUEST,
+      other: CATEGORY_OTHER,
+    };
+    return images[group] || CATEGORY_ALL;
+  };
+
   return (
     <div>
       <div className="flex gap-3 pb-2 pl-4 ">
         <div className="flex w-2/3 justify-between items-center">
           <img className="h-5" src={ICON_CONTROLLER_L1} />
-          {/*TODO: ADD ICONS FOR CATEGORIES*/}
           {allGroups.map((group, index) => (
             <div
               key={index}
-              className={`${currentGroup === group ? "bg-amber-700" : ""} px-2`}
+              className="relative px-2"
             >
-              {group.slice(0, 2)}
+              {currentGroup === group && (
+                <img
+                  src={CATEGORY_BACKLIGHT}
+                  className="absolute inset-0 w-full mt-1 h-full "
+                />
+              )}
+              <img
+                src={getImageForGroup(group)}
+                className={`size-8 relative ${currentGroup !== group ? "brightness-50" : ""}`}
+              />
             </div>
           ))}
           <img className="h-5" src={ICON_CONTROLLER_R1} />
