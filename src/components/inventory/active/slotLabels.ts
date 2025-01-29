@@ -9,7 +9,7 @@ import BODY_GARMENT_PREVIEW from "@/assets/items-preview/body_garment.png";
 import GLOVES_PREVIEW from "@/assets/items-preview/gloves.png";
 import ARM_ARMOUR_PREVIEW from "@/assets/items-preview/arm_armour.png";
 import HOSE_PREVIEW from "@/assets/items-preview/hose.png";
-// import LEG_PLATE_PREVIEW from "@/assets/items-preview/leg_plate.png";
+import LEG_PLATE_PREVIEW from "@/assets/items-preview/leg_armor.png";
 import LEG_CHAINMAIL_PREVIEW from "@/assets/items-preview/leg_chainmail.png";
 import BOOTS_PREVIEW from "@/assets/items-preview/boots.png";
 import RING_PREVIEW from "@/assets/items-preview/ring.png";
@@ -77,7 +77,7 @@ export const legSlotLabels: SlotLabel[] = [
   },
   {
     label: "legPlate",
-    previewImage: HOSE_PREVIEW,
+    previewImage: LEG_PLATE_PREVIEW,
   },
   {
     label: "boots",
