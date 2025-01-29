@@ -3,6 +3,7 @@ import { ItemType } from "@/types/common";
 import { Item } from "@/types/item";
 import { useMemo, useRef } from "react";
 import IS_ON_PLAYER from "@/assets/general-inventory/is_on_player.png";
+import ITEM_SELECTOR from "@/assets/general-inventory/item_selector.png";
 import BROKEN from "@/assets/general-inventory/broken.png";
 
 const InventoryListItem = ({ item }: { item: Item }) => {
@@ -29,11 +30,15 @@ const InventoryListItem = ({ item }: { item: Item }) => {
   return (
     <div
       ref={itemRef}
-      className={`flex items-center justify-between cursor-pointer px-3 ${
-        isSelected ? "bg-amber-400" : ""
-      }`}
+      className="relative flex items-center justify-between cursor-pointer px-3"
     >
-      <div className="flex gap-4 items-center">
+      {isSelected && (
+        <img
+          src={ITEM_SELECTOR}
+          className="absolute inset-0 w-full h-full object-cover opacity-50"
+        />
+      )}
+      <div className="flex gap-4 items-center relative z-10">
         <div className="relative">
           <img src={item.image} className="size-10" />
           {isOnPLayer && (
@@ -51,7 +56,7 @@ const InventoryListItem = ({ item }: { item: Item }) => {
         </div>
         <p>{item.name}</p>
       </div>
-      <div className="flex items-center pr-4">
+      <div className="flex items-center pr-4 relative z-10">
         <p className="w-16 text-right font-semibold">{item.count}</p>
         <p
           className={`w-16 text-right font-semibold ${
