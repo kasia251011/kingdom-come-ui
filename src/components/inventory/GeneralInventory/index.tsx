@@ -16,22 +16,42 @@ import WEIGHT from "@/assets/stats/item-stats/weight.png";
 import PRICE from "@/assets/stats/item-stats/price.png";
 
 const GeneralInventory = () => {
-  const { currentGroup, currentItems } = useAppSelector((state) => state.app);
+  const { currentGroup, currentItems, items, maxEquipLoad, currentGold } =
+    useAppSelector((state) => state.app);
+
+  const calculateCurrentEquipLoad = (): number => {
+    const currentEquipLoad = items
+      .map((item) => item.weight)
+      .reduce((sum, weight) => sum + weight, 0);
+    return Math.round(currentEquipLoad * 10) / 10;
+  };
 
   return (
     <div>
-      <div className="flex gap-5 pb-2 pl-4 ">
-        <img className="h-5" src={ICON_CONTROLLER_L1} />
-
-        {allGroups.map((group, index) => (
-          <div
-            key={index}
-            className={`${currentGroup === group ? "bg-amber-700" : ""} px-2`}
-          >
-            {group.slice(0, 2)}
+      <div className="flex gap-3 pb-2 pl-4 ">
+        <div className="flex w-2/3 justify-between items-center">
+          <img className="h-5" src={ICON_CONTROLLER_L1} />
+          {/*TODO: ADD ICONS FOR CATEGORIES*/}
+          {allGroups.map((group, index) => (
+            <div
+              key={index}
+              className={`${currentGroup === group ? "bg-amber-700" : ""} px-2`}
+            >
+              {group.slice(0, 2)}
+            </div>
+          ))}
+          <img className="h-5" src={ICON_CONTROLLER_R1} />
+        </div>
+        <div className="flex gap-5 w-1/3 items-center justify-end mr-4">
+          <div className="flex gap-0.5">
+            <img src={WEIGHT} className="size-7" />
+            <p className="self-end">{`${calculateCurrentEquipLoad()} / ${maxEquipLoad}`}</p>
           </div>
-        ))}
-        <img className="h-5" src={ICON_CONTROLLER_R1} />
+          <div className="flex gap-0.5">
+            <img src={PRICE} className="size-7" />
+            <p className="self-end">{currentGold}</p>
+          </div>
+        </div>
       </div>
       <div
         className="flex flex-col bg-no-repeat bg-cover h-[500px] p-5 text-black"

@@ -17,6 +17,8 @@ export interface AppState {
     [key in ItemType]: Item | undefined;
   };
   items: Item[];
+  currentGold: number,
+  maxEquipLoad: number
 }
 
 const allItems = [...armourItems, ...foodItems, ...weaponItems, ...questItems, ...otherItems];
@@ -24,6 +26,8 @@ const allItems = [...armourItems, ...foodItems, ...weaponItems, ...questItems, .
 const initialState: AppState = {
   currentItem: armourItems[0],
   currentItems: allItems,
+  currentGold: 2000,
+  maxEquipLoad: 200,
   playerStats: {
     energy: 90,
     health: 85,
