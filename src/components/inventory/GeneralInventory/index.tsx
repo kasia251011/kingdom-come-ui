@@ -15,18 +15,26 @@ import DURABILITY from "@/assets/stats/item-stats/durability.png";
 import WEIGHT from "@/assets/stats/item-stats/weight.png";
 import PRICE from "@/assets/stats/item-stats/price.png";
 
-{/*TODO: UPDATE ICONS FOR CATEGORIES*/}
+{
+  /*TODO: UPDATE ICONS FOR CATEGORIES*/
+}
 import CATEGORY_ALL from "@/assets/general-inventory/categories/category_all.png";
-import CATEGORY_ARMOUR from "@/assets/general-inventory/categories/category_all.png";
-import CATEGORY_WEAPON from "@/assets/general-inventory/categories/category_all.png";
-import CATEGORY_FOOD from "@/assets/general-inventory/categories/category_all.png";
-import CATEGORY_QUEST from "@/assets/general-inventory/categories/category_all.png";
-import CATEGORY_OTHER from "@/assets/general-inventory/categories/category_all.png";
+import CATEGORY_ARMOUR from "@/assets/general-inventory/categories/category-armour.png";
+import CATEGORY_WEAPON from "@/assets/general-inventory/categories/category-weapons.png";
+import CATEGORY_FOOD from "@/assets/general-inventory/categories/category-food.png";
+import CATEGORY_QUEST from "@/assets/general-inventory/categories/category-quest.png";
+import CATEGORY_OTHER from "@/assets/general-inventory/categories/category-other.png";
 import CATEGORY_BACKLIGHT from "@/assets/general-inventory/categories/category_backlight.png";
 
 const GeneralInventory = () => {
-  const { currentGroup, currentItems, items, maxEquipLoad, currentGold, detailsOpen } =
-    useAppSelector((state) => state.app);
+  const {
+    currentGroup,
+    currentItems,
+    items,
+    maxEquipLoad,
+    currentGold,
+    detailsOpen,
+  } = useAppSelector((state) => state.app);
 
   const calculateCurrentEquipLoad = (): number => {
     const currentEquipLoad = items
@@ -50,13 +58,13 @@ const GeneralInventory = () => {
   return (
     <div>
       <div className="flex gap-3 pb-2 pl-4 ">
-        <div className="flex w-2/3 justify-between items-center">
+        <div className="relative flex w-2/3 justify-between items-center">
+          <p className="absolute bottom-full left-1/2 -translate-x-1/2 capitalize text-gray-400 mb-2">
+            {currentGroup} items
+          </p>
           <img className="h-5" src={ICON_CONTROLLER_L1} />
           {allGroups.map((group, index) => (
-            <div
-              key={index}
-              className="relative px-2"
-            >
+            <div key={index} className="relative px-2">
               {currentGroup === group && (
                 <img
                   src={CATEGORY_BACKLIGHT}
@@ -65,7 +73,9 @@ const GeneralInventory = () => {
               )}
               <img
                 src={getImageForGroup(group)}
-                className={`size-8 relative ${currentGroup !== group ? "brightness-50" : ""}`}
+                className={`size-8 relative ${
+                  currentGroup !== group ? "brightness-50" : ""
+                }`}
               />
             </div>
           ))}
@@ -83,7 +93,9 @@ const GeneralInventory = () => {
         </div>
       </div>
       <div
-        className={`flex flex-col bg-no-repeat bg-cover p-5 text-black ${detailsOpen ? "h-[500px]" : "h-[676px]"} `}
+        className={`flex flex-col bg-no-repeat bg-cover p-5 text-black ${
+          detailsOpen ? "h-[500px]" : "h-[676px]"
+        } `}
         style={{ backgroundImage: `url(${PAPER})` }}
       >
         <div
