@@ -27,7 +27,7 @@ export const armourItems: Item[] = [
     count: 1,
     weight: 6,
     price: 2419,
-    durability: 78,
+    durability: 15,
     type: "helmet",
     group: "armour",
     sideStats: {
@@ -288,7 +288,7 @@ export const armourItems: Item[] = [
     count: 1,
     weight: 3,
     price: 1,
-    durability: 57,
+    durability: 12,
     type: "legChainmail",
     group: "armour",
     sideStats: {

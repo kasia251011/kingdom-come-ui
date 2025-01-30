@@ -89,7 +89,7 @@ export const weaponItems: Item[] = [
     count: 1,
     weight: 3,
     price: 497.2,
-    durability: 100,
+    durability: 70,
     type: "bow",
     group: "weapon",
     sideStats: {
@@ -110,7 +110,7 @@ export const weaponItems: Item[] = [
     count: 87,
     weight: 0.1,
     price: 0.1,
-    durability: 0,
+    durability: 10,
     type: "arrows",
     group: "weapon",
     sideStats: {
