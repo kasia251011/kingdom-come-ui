@@ -74,8 +74,8 @@ const GeneralInventory = () => {
               )}
               <img
                 src={getImageForGroup(group)}
-                className={`size-8 relative ${
-                  currentGroup !== group ? "brightness-50" : ""
+                className={`size-8 relative transition-transform-brightness duration-200 ${
+                  currentGroup !== group ? "brightness-50 " : "scale-130"
                 }`}
               />
             </div>
