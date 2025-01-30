@@ -40,7 +40,7 @@ const ItemInfo = () => {
 
   return (
     <div
-      className="flex gap-3 bg-no-repeat bg-center bg-contain h-[200px] w-[650px] -ml-2 -mt-6 px-7 pt-10 text-black"
+      className="flex gap-3 bg-no-repeat bg-center bg-contain h-[200px] w-[650px] -ml-2 -mt-6 px-7 pt-10 text-black relative"
       style={{ backgroundImage: `url(${PAPER})` }}
     >
       <img src={currentItem.image} className="size-20" />
