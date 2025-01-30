@@ -15,9 +15,6 @@ import DURABILITY from "@/assets/stats/item-stats/durability.png";
 import WEIGHT from "@/assets/stats/item-stats/weight.png";
 import PRICE from "@/assets/stats/item-stats/price.png";
 
-{
-  /*TODO: UPDATE ICONS FOR CATEGORIES*/
-}
 import CATEGORY_ALL from "@/assets/general-inventory/categories/category_all.png";
 import CATEGORY_ARMOUR from "@/assets/general-inventory/categories/category-armour.png";
 import CATEGORY_WEAPON from "@/assets/general-inventory/categories/category-weapons.png";

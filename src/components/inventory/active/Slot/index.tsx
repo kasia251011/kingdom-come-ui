@@ -3,6 +3,7 @@ import SLOT_SELECT from "@/assets/slot_select.png";
 import { ItemType } from "@/types/common";
 import { SlotLabel } from "../slotLabels";
 import { useAppSelector } from "@/redux/hooks";
+import SELECTION_MARKER from "@/assets/selection-marker.png";
 import { useMemo } from "react";
 
 interface SlotProps {
@@ -25,8 +26,11 @@ const Slot = ({ slotLabel }: SlotProps) => {
       style={{
         backgroundImage: `url(${isItemSelected ? SLOT_SELECT : SLOT_PAPER})`,
       }}
-      className={`size-15 flex justify-center items-center bg-no-repeat bg-center bg-cover`}
-    >
+      className={`relative size-15 flex justify-center items-center bg-no-repeat bg-center bg-cover`}
+    > 
+      {isItemSelected && (
+        <img src={SELECTION_MARKER} className="absolute left-0 -translate-x-[80%] h-7" alt="" />
+      )}
       <img
         src={itemActive ?? slotLabel.previewImage}
         className={`${itemActive ? "size-10 " : "opacity-30"}   `}
