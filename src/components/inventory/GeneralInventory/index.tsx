@@ -8,6 +8,7 @@ import ICON_CONTROLLER_L1 from "@/assets/controller-icons/pad_l1_x4.png";
 import ICON_CONTROLLER_R1 from "@/assets/controller-icons/pad_r1_x4.png";
 
 import LINE from "@/assets/general-inventory/line.png";
+import SORT_ARROW from "@/assets/sort-arrow.png";
 import DECORATION_TOP from "@/assets/general-inventory/decoration_top.png";
 
 import QUANTITY from "@/assets/stats/item-stats/quantity.png";
@@ -97,10 +98,13 @@ const GeneralInventory = () => {
         style={{ backgroundImage: `url(${PAPER})` }}
       >
         <div
-          className="bg-no-repeat flex items-center justify-between px-3 py-1"
+          className="bg-no-repeat flex items-center justify-between px-3 pb-1"
           style={{ backgroundImage: `url(${DECORATION_TOP})` }}
         >
-          <p className="ml-2 text-yellow-300">Nazwa przedmiotu</p>
+          <div className="flex flex-row items-center">
+            <p className="ml-2 text-yellow-300">Nazwa przedmiotu</p>
+            <img src={SORT_ARROW} className="w-8" />
+          </div>
           <div className="flex items-center pr-4">
             <div className="flex w-15 justify-end">
               <img src={QUANTITY} className="size-7" />

@@ -16,7 +16,7 @@ export const foodItems: Item[] = [
     count: 3,
     weight: 0.3,
     price: 0.5,
-    durability: 100,
+    durability: 90,
     group: "food",
     survivalStats: {
       hunger: 2,
@@ -42,7 +42,7 @@ export const foodItems: Item[] = [
     count: 2,
     weight: 0.3,
     price: 0.2,
-    durability: 100,
+    durability: 85,
     group: "food",
     survivalStats: {
       hunger: 3,
@@ -68,7 +68,7 @@ export const foodItems: Item[] = [
     count: 1,
     weight: 0.3,
     price: 0.2,
-    durability: 100,
+    durability: 45,
     group: "food",
     survivalStats: {
       hunger: 17,
@@ -94,7 +94,7 @@ export const foodItems: Item[] = [
     count: 1,
     weight: 0.5,
     price: 2,
-    durability: 100,
+    durability: 60,
     group: "food",
     survivalStats: {
       hunger: 8,

@@ -18,11 +18,21 @@ export interface AppState {
     [key in ItemType]: Item | undefined;
   };
   items: Item[];
-  currentGold: number,
-  maxEquipLoad: number
+  currentGold: number;
+  maxEquipLoad: number;
 }
 
-const allItems = [...armourItems, ...foodItems, ...weaponItems, ...questItems, ...otherItems];
+const allItems = [
+  ...armourItems,
+  ...foodItems,
+  ...weaponItems,
+  ...questItems,
+  ...otherItems,
+].sort((a, b) => {
+  if (a.name > b.name) return 1;
+  if (a.name < b.name) return -1;
+  return 0;
+});
 
 const initialState: AppState = {
   currentItem: armourItems[0],
