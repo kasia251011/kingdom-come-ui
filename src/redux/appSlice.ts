@@ -9,7 +9,7 @@ import { questItems } from "@/data/questItems";
 import { otherItems } from "@/data/otherItems";
 
 export interface AppState {
-  currentIte1m: Item;
+  currentItem: Item;
   currentGroup: GroupTypeAll;
   currentItems: Item[];
   playerStats: PlayerStats;
