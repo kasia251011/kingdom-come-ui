@@ -13,6 +13,7 @@ export interface AppState {
   currentGroup: GroupTypeAll;
   currentItems: Item[];
   playerStats: PlayerStats;
+  detailsOpen: boolean;
   activeInventory: {
     [key in ItemType]: Item | undefined;
   };
@@ -26,6 +27,7 @@ const allItems = [...armourItems, ...foodItems, ...weaponItems, ...questItems, .
 const initialState: AppState = {
   currentItem: armourItems[0],
   currentItems: allItems,
+  detailsOpen: true,
   currentGold: 2000,
   maxEquipLoad: 200,
   playerStats: {
@@ -114,6 +116,9 @@ const authSlice = createSlice({
         state.currentItems.find((oldItem) => oldItem.id === item.id) ??
         state.currentItems[0];
     },
+    toggleItemDetails(state) {
+      state.detailsOpen = !state.detailsOpen;
+    },
     setCurrentItem(state, action: PayloadAction<Item>) {
       state.currentItem = action.payload;
     },
@@ -141,5 +146,6 @@ export const {
   setCurrentItem,
   eatItem,
   setCurrentGroup,
+  toggleItemDetails,
 } = authSlice.actions;
 export default authSlice.reducer;

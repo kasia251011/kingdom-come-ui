@@ -12,7 +12,8 @@ import FOOD_DARK from "@/assets/stats/survival-stats/food-dark.png";
 import { useEffect, useRef } from "react";
 
 const ItemInfo = () => {
-  const { currentItem } = useAppSelector((state) => state.app);
+  const { currentItem, detailsOpen } = useAppSelector((state) => state.app);
+  
   const divRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -33,7 +34,7 @@ const ItemInfo = () => {
     };
   }, []);
 
-  if (!currentItem) {
+  if (!currentItem || !detailsOpen) {
     return null;
   }
 
