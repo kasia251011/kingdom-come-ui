@@ -25,7 +25,7 @@ import CATEGORY_OTHER from "@/assets/general-inventory/categories/category_all.p
 import CATEGORY_BACKLIGHT from "@/assets/general-inventory/categories/category_backlight.png";
 
 const GeneralInventory = () => {
-  const { currentGroup, currentItems, items, maxEquipLoad, currentGold } =
+  const { currentGroup, currentItems, items, maxEquipLoad, currentGold, detailsOpen } =
     useAppSelector((state) => state.app);
 
   const calculateCurrentEquipLoad = (): number => {
@@ -83,7 +83,7 @@ const GeneralInventory = () => {
         </div>
       </div>
       <div
-        className="flex flex-col bg-no-repeat bg-cover h-[500px] p-5 text-black"
+        className={`flex flex-col bg-no-repeat bg-cover p-5 text-black ${detailsOpen ? "h-[500px]" : "h-[676px]"} `}
         style={{ backgroundImage: `url(${PAPER})` }}
       >
         <div
