@@ -25,6 +25,7 @@ import CATEGORY_FOOD from "@/assets/general-inventory/categories/category-food.p
 import CATEGORY_QUEST from "@/assets/general-inventory/categories/category-quest.png";
 import CATEGORY_OTHER from "@/assets/general-inventory/categories/category-other.png";
 import CATEGORY_BACKLIGHT from "@/assets/general-inventory/categories/category_backlight.png";
+import { mapGroupTypeToLabel } from "./helpers";
 
 const GeneralInventory = () => {
   const {
@@ -60,7 +61,7 @@ const GeneralInventory = () => {
       <div className="flex gap-3 pb-2 pl-4 ">
         <div className="relative flex w-2/3 justify-between items-center">
           <p className="absolute bottom-full left-1/2 -translate-x-1/2 capitalize text-gray-400 mb-2">
-            {currentGroup} items
+            {mapGroupTypeToLabel(currentGroup)}
           </p>
           <img className="h-5" src={ICON_CONTROLLER_L1} />
           {allGroups.map((group, index) => (

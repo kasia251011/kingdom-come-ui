@@ -51,11 +51,11 @@ const GeneralStat = ({ statName, statImage }: SideStatProps) => {
   }, [virtualValue, value]);
 
   return (
-    <div className="flex gap-2 w-34 text-sm justify-between items-center">
+    <div className="flex gap-2 w-35 text-sm justify-between items-center">
       <img src={statImage} alt={label} className="size-7" />
-      <p className="font-semibold self-end">{label}</p>
-      <p className={`font-semibold self-end w-3 ${statColor}`}>
-        {virtualValue ? virtualValue : value}
+      <p className="font-semibold w-22">{label}</p>
+      <p className={`font-semibold w-3 ${statColor}`}>
+        {virtualValue ?? value}
       </p>
     </div>
   );

@@ -17,7 +17,7 @@ const SurvivalStat = ({
           fieldName === "energy" ? "w-3 h-4 ml-1 mr-2" : "w-6 h-6"
         }`}
       />
-      <div className="relative w-48 ">
+      <div className="relative w-50 ">
         <img src={bar} />
         <img
           src={fill}
