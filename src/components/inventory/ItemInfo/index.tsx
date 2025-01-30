@@ -8,6 +8,7 @@ import BLUNT_DARK from "@/assets/defense-icons/blunt_dark.png";
 import ENERGY_DARK from "@/assets/stats/survival-stats/energy-dark.png";
 import HEALTH_DARK from "@/assets/stats/survival-stats/health-dark.png";
 import FOOD_DARK from "@/assets/stats/survival-stats/food-dark.png";
+import SELECTION_MARKER from "@/assets/selection-marker.png";
 
 import { useEffect, useRef } from "react";
 
@@ -40,9 +41,10 @@ const ItemInfo = () => {
 
   return (
     <div
-      className="flex gap-3 bg-no-repeat bg-center bg-contain h-[200px] w-[650px] -ml-2 -mt-6 px-7 pt-10 text-black relative"
+      className="relative flex gap-3 bg-no-repeat bg-center bg-contain h-[200px] w-[650px] -ml-2 -mt-6 px-7 pt-10 text-black"
       style={{ backgroundImage: `url(${PAPER})` }}
     >
+      <img src={SELECTION_MARKER} className="absolute left-0 -translate-x-[50%] -translate-y-[50%] top-1/2" alt="" />
       <img src={currentItem.image} className="size-20" />
       <div className="">
         <p className="text-xl nav-item">{currentItem.name}</p>

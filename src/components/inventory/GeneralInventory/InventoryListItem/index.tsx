@@ -5,6 +5,7 @@ import { useMemo, useRef } from "react";
 import IS_ON_PLAYER from "@/assets/general-inventory/is_on_player.png";
 import ITEM_SELECTOR from "@/assets/general-inventory/item_selector.png";
 import BROKEN from "@/assets/general-inventory/broken.png";
+import SELECTION_MARKER from "@/assets/selection-marker.png";
 
 const InventoryListItem = ({ item }: { item: Item }) => {
   const { activeInventory, currentItem } = useAppSelector((state) => state.app);
@@ -30,13 +31,16 @@ const InventoryListItem = ({ item }: { item: Item }) => {
   return (
     <div
       ref={itemRef}
-      className="relative flex items-center justify-between cursor-pointer px-3"
+      className="relative flex items-center justify-between cursor-pointer pl-5 px-3"
     >
       {isSelected && (
-        <img
-          src={ITEM_SELECTOR}
-          className="absolute inset-0 w-full h-full object-cover opacity-50"
-        />
+        <>
+          <img
+            src={ITEM_SELECTOR}
+            className="absolute right-0 top-0 bottom-0 opacity-50 h-full w-[90%]"
+          />
+          <img src={SELECTION_MARKER} className="absolute left-0 -translate-x-[2px] h-10" alt="" />
+        </>
       )}
       <div className="flex gap-4 items-center relative z-10">
         <div className="relative">
